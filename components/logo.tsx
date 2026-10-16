@@ -1,12 +1,16 @@
+import Image from "next/image";
+
 export function Logo({ size = 36 }: { size?: number }) {
   return (
-    <span
-      className="inline-flex items-center justify-center rounded-xl bg-primary font-semibold text-white"
-      style={{ width: size, height: size, fontSize: size * 0.48 }}
+    <Image
+      src="/logo.svg"
+      alt=""
+      width={size}
+      height={size}
+      className="shrink-0"
       aria-hidden
-    >
-      P
-    </span>
+      priority
+    />
   );
 }
 

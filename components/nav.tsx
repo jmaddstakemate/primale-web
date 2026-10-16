@@ -28,7 +28,7 @@ export function Nav() {
         </nav>
         <Link
           href="/#waitlist"
-          className="rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-light"
+          className="rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-on-primary transition-colors hover:bg-primary-light"
         >
           Join waitlist
         </Link>

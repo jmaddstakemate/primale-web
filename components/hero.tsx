@@ -13,7 +13,7 @@ const GOALS = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(13,148,136,0.18),_transparent_55%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(245,166,35,0.14),_transparent_55%)]" />
       <div className="relative mx-auto grid max-w-6xl items-center gap-16 px-5 py-16 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:py-24">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-light">

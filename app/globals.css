@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --background-secondary: #0a0a0a;
+  --background: #05080c;
+  --background-secondary: #0a1018;
   --foreground: #f8fafc;
   --muted: #94a3b8;
   --muted-2: #64748b;
-  --card: #141414;
-  --border: #262626;
-  --primary: #0d9488;
-  --primary-light: #14b8a6;
-  --primary-dark: #0f766e;
-  --accent: #f59e0b;
-  --accent-light: #fbbf24;
+  --card: #101820;
+  --border: #1e2a36;
+  --primary: #f5a623;
+  --primary-light: #fbbf4d;
+  --primary-dark: #b8730a;
+  /* Gold is too light for white text — anything sitting on primary uses navy. */
+  --on-primary: #0b1520;
+  --accent: #7ba4d6;
+  --accent-light: #a9c5e8;
   --optimal: #22c55e;
 }
 
@@ -27,6 +29,7 @@
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
   --color-primary-dark: var(--primary-dark);
+  --color-on-primary: var(--on-primary);
   --color-accent: var(--accent);
   --color-accent-light: var(--accent-light);
   --color-optimal: var(--optimal);

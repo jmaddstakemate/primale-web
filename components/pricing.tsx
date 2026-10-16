@@ -49,7 +49,7 @@ export function Pricing() {
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold">{plan.label}</h3>
                 {plan.badge && (
-                  <span className="rounded-full bg-primary px-2.5 py-1 text-xs font-semibold text-white">
+                  <span className="rounded-full bg-primary px-2.5 py-1 text-xs font-semibold text-on-primary">
                     {plan.badge}
                   </span>
                 )}
@@ -68,7 +68,7 @@ export function Pricing() {
         <div className="mt-8">
           <Link
             href="/#waitlist"
-            className="inline-flex h-12 items-center rounded-xl bg-primary px-6 text-[15px] font-semibold text-white transition-colors hover:bg-primary-light"
+            className="inline-flex h-12 items-center rounded-xl bg-primary px-6 text-[15px] font-semibold text-on-primary transition-colors hover:bg-primary-light"
           >
             Join the waitlist
           </Link>

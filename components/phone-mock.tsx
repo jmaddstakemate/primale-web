@@ -20,7 +20,7 @@ export function PhoneMock() {
   return (
     <div className="relative mx-auto w-[280px] sm:w-[300px]">
       <div className="absolute -inset-10 rounded-full bg-primary/20 blur-3xl" />
-      <div className="relative rounded-[2.4rem] border border-white/10 bg-[#1a1a1a] p-2.5 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)]">
+      <div className="relative rounded-[2.4rem] border border-white/10 bg-[#0e1620] p-2.5 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)]">
         <div className="relative overflow-hidden rounded-[1.9rem] bg-background">
           <div className="absolute left-1/2 top-2 z-10 h-[22px] w-[92px] -translate-x-1/2 rounded-full bg-black" />
 
@@ -39,7 +39,7 @@ export function PhoneMock() {
                   cy="74"
                   r={radius}
                   fill="none"
-                  stroke="#262626"
+                  className="stroke-border"
                   strokeWidth="10"
                 />
                 <circle
@@ -47,7 +47,7 @@ export function PhoneMock() {
                   cy="74"
                   r={radius}
                   fill="none"
-                  stroke="#14B8A6"
+                  className="stroke-primary"
                   strokeWidth="10"
                   strokeLinecap="round"
                   strokeDasharray={circumference}
@@ -103,15 +103,15 @@ export function PhoneMock() {
               >
                 <defs>
                   <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#14B8A6" stopOpacity="0.35" />
-                    <stop offset="100%" stopColor="#14B8A6" stopOpacity="0" />
+                    <stop offset="0%" style={{ stopColor: "var(--primary)" }} stopOpacity="0.35" />
+                    <stop offset="100%" style={{ stopColor: "var(--primary)" }} stopOpacity="0" />
                   </linearGradient>
                 </defs>
                 <path d={AREA} fill="url(#chartFill)" />
                 <path
                   d={LINE}
                   fill="none"
-                  stroke="#14B8A6"
+                  className="stroke-primary"
                   strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
