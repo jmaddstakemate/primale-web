@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-export const CONTACT_EMAIL = "hello@primale.app";
+export const CONTACT_EMAIL = "support@primale.health";
 
 export const COMPANY = {
   name: "Primale Health Limited",
