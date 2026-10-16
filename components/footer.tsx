@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { COMPANY } from "./legal";
 import { Wordmark } from "./logo";
 
 export function Footer() {
@@ -27,10 +28,17 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border">
-        <p className="mx-auto max-w-6xl px-5 py-5 text-xs text-muted-2 sm:px-8">
-          Primale is not medical advice, diagnosis, or treatment. Always speak
-          with a qualified clinician about your health.
-        </p>
+        <div className="mx-auto max-w-6xl space-y-2 px-5 py-5 text-xs text-muted-2 sm:px-8">
+          <p>
+            Primale is not medical advice, diagnosis, or treatment. Always speak
+            with a qualified clinician about your health.
+          </p>
+          <p>
+            © {new Date().getFullYear()} {COMPANY.name}. Registered in England
+            and Wales, company number {COMPANY.number}. Registered office:{" "}
+            {COMPANY.address}.
+          </p>
+        </div>
       </div>
     </footer>
   );
