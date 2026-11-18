@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/footer";
+import { MotionProvider } from "@/components/motion-provider";
 import { Nav } from "@/components/nav";
+import { APP_STORE_ID } from "@/lib/app-store";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Primale — Optimize your testosterone, for real",
     description:
-      "Monthly at-home blood tests, personalized protocols, and testosterone tracking. Join the waitlist.",
+      "Monthly at-home blood tests, personalized protocols, and testosterone tracking. Now on the App Store.",
     siteName: "Primale",
     locale: "en_GB",
     type: "website",
@@ -39,7 +41,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Primale — Optimize your testosterone, for real",
     description:
-      "Monthly at-home blood tests, personalized protocols, and testosterone tracking. Join the waitlist.",
+      "Monthly at-home blood tests, personalized protocols, and testosterone tracking. Now on the App Store.",
+  },
+  itunes: {
+    appId: APP_STORE_ID,
   },
 };
 
@@ -50,9 +55,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background font-sans text-foreground">
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <MotionProvider>
+          <Nav />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

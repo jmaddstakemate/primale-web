@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-export function Logo({ size = 36 }: { size?: number }) {
+export function Logo({ size = 36, className = "" }: { size?: number; className?: string }) {
   return (
     <Image
       src="/logo.svg"
       alt=""
       width={size}
       height={size}
-      className="shrink-0"
+      className={`shrink-0 ${className}`}
       aria-hidden
       priority
     />
