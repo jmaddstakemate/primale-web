@@ -302,7 +302,8 @@ const TREND = [
   { month: "Nov", value: 22.1 },
   { month: "Dec", value: 23.8 },
 ];
-const TREND_MAX = 26;
+const TREND_MIN = 10;
+const TREND_MAX = 25;
 
 export function TrendScreen({ play }: { play: boolean }) {
   const latest = useCountUp(23.8, play, 1, 0.3);
@@ -323,18 +324,20 @@ export function TrendScreen({ play }: { play: boolean }) {
           {TREND.map((point, index) => {
             const isLatest = index === TREND.length - 1;
             return (
-              <div key={point.month} className="flex flex-1 flex-col items-center gap-2">
-                <motion.div
-                  className={`w-full origin-bottom rounded-lg ${
-                    isLatest
-                      ? "bg-primary shadow-[0_0_20px_rgba(245,166,35,0.5)]"
-                      : "bg-primary/25"
-                  }`}
-                  style={{ height: `${(point.value / TREND_MAX) * 100}%` }}
-                  initial={{ scaleY: 0 }}
-                  animate={{ scaleY: play ? 1 : 0 }}
-                  transition={{ duration: 0.8, ease: EASE, delay: 0.15 + index * 0.1 }}
-                />
+              <div key={point.month} className="flex h-full flex-1 flex-col items-center gap-2">
+                <div className="relative w-full flex-1">
+                  <motion.div
+                    className={`absolute inset-x-0 bottom-0 origin-bottom rounded-lg ${
+                      isLatest
+                        ? "bg-primary shadow-[0_0_20px_rgba(245,166,35,0.5)]"
+                        : "bg-primary/25"
+                    }`}
+                    style={{ height: `${((point.value - TREND_MIN) / (TREND_MAX - TREND_MIN)) * 100}%` }}
+                    initial={{ scaleY: 0 }}
+                    animate={{ scaleY: play ? 1 : 0 }}
+                    transition={{ duration: 0.8, ease: EASE, delay: 0.15 + index * 0.1 }}
+                  />
+                </div>
                 <span className={`text-[10px] font-semibold ${isLatest ? "text-primary-light" : "text-muted-2"}`}>
                   {point.month}
                 </span>
